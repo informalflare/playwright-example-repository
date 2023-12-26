@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM"],
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "paths": {
+      "@interfaces": ["src/interfaces/index.ts"],
+      "@data": ["src/data/index.ts"],
+      "@pages": ["src/po/pages/index.ts"],
+      "@elements": ["src/po/elements/index.ts"],
+      "@fixtures": ["src/fixtures/fixtures.ts"]
+    }
+  },
+}
