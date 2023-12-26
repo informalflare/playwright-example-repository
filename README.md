@@ -1,5 +1,5 @@
 ## To run the tests use
-`npx run e2e` or `npx playwright test`
+`npx run e2e` 
 
 ## folder structure
 - src/specs - a place where your Tests should be placed
