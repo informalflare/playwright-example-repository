@@ -1,7 +1,6 @@
 ## Installation
 
 - Preconditions: You have `node` and `npm` installed.
-- Log into the N Artifactory (see the steps below)
 - run `npm install` to download all the needed libraries
 - run `npm playwright install` this is needed to download the browser binaries.
 
