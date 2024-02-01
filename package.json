@@ -1,18 +1,22 @@
 {
   "name": "playwright-example-repo",
-  "version": "1.0.0",
-  "description": "This installation plan ensures that you can make changes to the Playwright test repository in a controlled manner (using version management). \r It installs Visual Studio Code, Git, Typescript and Playwright, creates a local directory and connects your Azure Devops repository. \r This makes it easier for teams to collaborate and share test cases with each other.",
+  "version": "1.0.1",
+  "description": "Base playwright framework structure",
   "main": "index.js",
   "scripts": {
-    "e2e": "npx playwright test --project=chromium",
-    "test": "npx playwright test",
-    "visual": "bash src/scripts.sh"
+    "e2e": "npx playwright test --config ui/ui.config.ts --project=chromium",
+    "e2e-api": "npx playwright test --config api/api.config.ts --project=api",
+    "visual": "bash ui/scripts.sh",
+    "format": "npx prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@playwright/test": "1.40.0",
-    "@types/node": "20.5.9"
+    "@types/node": "20.5.9",
+    "dotenv": "^16.3.1",
+    "prettier": "^3.1.1"
   }
 }

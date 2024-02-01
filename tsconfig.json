@@ -6,11 +6,11 @@
     "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
-      "@interfaces": ["src/interfaces/index.ts"],
-      "@data": ["src/data/index.ts"],
-      "@pages": ["src/po/pages/index.ts"],
-      "@elements": ["src/po/elements/index.ts"],
-      "@fixtures": ["src/fixtures/fixtures.ts"]
+      "@interfaces": ["ui/interfaces/index.ts"],
+      "@data": ["ui/data/index.ts"],
+      "@pages": ["ui/po/pages/index.ts"],
+      "@elements": ["ui/po/elements/index.ts"],
+      "@fixtures": ["fixtures/fixtures.ts"]
     }
-  },
+  }
 }
