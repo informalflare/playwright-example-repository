@@ -1,7 +1,5 @@
 ## Preconditions
-
-- use the .env_example file to create an env file with credentials
-- credentials should be correct
+- use the .env_example file to create an .env file in the root directory with user credentials
 
 # How to run the api tests
 
