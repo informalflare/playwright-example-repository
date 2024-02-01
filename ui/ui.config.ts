@@ -1,9 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: 'src/specs',
-  outputDir:'.tmp/test-results',
-  reporter: [['list'], ['html', { outputFolder: '.tmp/report'}]],
+  testDir: 'specs',
+  outputDir: '.tmp/test-results',
+  reporter: [['list'], ['html', { outputFolder: '.tmp/report' }]],
   fullyParallel: true,
   timeout: 60 * 1000,
   forbidOnly: !!process.env.CI,
@@ -15,20 +15,17 @@ export default defineConfig({
     screenshot: { mode: 'only-on-failure', fullPage: true },
   },
 
-
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
-        viewport:{width:1440, height:1000},
-        storageState: 'src/state.json',},
+      use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 1000 }, storageState: 'ui/state.json' },
       // dependencies: ['setup'], //uncomment this line if you will be using setup(authentication)
       // https://playwright.dev/docs/test-global-setup-teardown
     },
     {
       name: 'setup',
       testMatch: /global\.setup\.ts/,
-      use: { ...devices['Desktop Chrome']},
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
 });
