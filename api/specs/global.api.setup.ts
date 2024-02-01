@@ -16,10 +16,12 @@ test('Getting and Setting Token', async ({ api }) => {
     }
   } else {
     throw new Error(
-      'USER_NAME or USER_PASS is missing from .env file. ' +
-        '\n Make sure you have created the file in your project root directory with correct credentials. ' +
+      'USER_NAME or USER_PASS is missing from environmental variables (.env file.) ' +
+        '\n Make sure you have .env in your project root directory' +
+        '\n if not use .env_example as a guideline acnd create it'+
+        '\n For more information visit: https://blog.bitsrc.io/a-gentle-introduction-to-env-files-9ad424cc5ff4'+
         '\n' +
-        '\n IMPORTANT: IF there is no need to logIn:' +
+        '\n IMPORTANT: IF there is no need to logIn/save tokens' +
         '\n Remove the "api-setup" project form "api/api.config.ts"'
     );
   }
