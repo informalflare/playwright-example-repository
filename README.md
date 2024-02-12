@@ -2,7 +2,7 @@
 
 - Preconditions: You have `node` and `npm` installed.
 - run `npm install` to download all the needed libraries
-- run `npm playwright install` this is needed to download the browser binaries.
+- run `npx playwright install` this is needed to download the browser binaries.
 
 ## To run the tests
 - `npm run e2e` to run UI tests

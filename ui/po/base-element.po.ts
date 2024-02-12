@@ -6,7 +6,7 @@ export abstract class BaseElement {
   page: Page;
   constructor(root: Locator | Page) {
     this.root = root;
-    this.page = isLocator(root) ? root.page() : root;
+    this.page = isLocator(root) ? (root as Locator).page() : (root as Page);
   }
 
   $(selector: string): Locator {
