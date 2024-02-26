@@ -19,7 +19,7 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 1000 }, storageState: 'ui/state.json' },
-      // dependencies: ['setup'], //uncomment this line if you will be using setup(authentication)
+      dependencies: ['setup'], //uncomment this line if you will be using setup(authentication)
       // https://playwright.dev/docs/test-global-setup-teardown
     },
     {

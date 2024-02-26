@@ -1,4 +1,4 @@
-import { test } from '@fixtures';
+import {expect, test} from '@fixtures';
 
 // This is a global setup file, It will be run Once before all of your tests
 // Here we want to authenticate into the system+save the state of the browser to use in following tests
@@ -6,8 +6,8 @@ import { test } from '@fixtures';
 
 const authFilePath: string = 'ui/state.json'; //Path to the file
 
-test.skip('authenticate', async ({ page }) => {
-  await page.goto('https://www.google.com'); //change the url to the correct one
+test('authenticate/ accept cookies etc', async ({ textBox, page }) => {
+  //------------------------------------------------------------------------------------
   //a) Add actions to log into the application //example:
   // await page.locator('button[id="Accept-All-Cookies"]').click(); //accept cookies
   // await page.locator('input[id*="username"]').fill('user1'); //input username
@@ -18,5 +18,16 @@ test.skip('authenticate', async ({ page }) => {
   //await expect(page.locator('logged-in-element')).toBeVisible() //wait until logged in state
 
   //c) Save the state into the file
+  //------------------------------------------------------------------------------------
+  //a)
+  await textBox.visit();
+  if (await page.getByLabel('Consent', { exact: true }).isVisible()) {
+    await page.getByLabel('Consent', { exact: true }).click();
+  }
+  //b)
+  await expect(await page.getByLabel('Consent', { exact: true })).not.toBeVisible()
+  await page.waitForTimeout(1000); //just wait for the stuff to be finished
+  // c)
+
   await page.context().storageState({ path: authFilePath });
 });
