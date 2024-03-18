@@ -1,5 +1,5 @@
 import { APIRequestContext } from '@playwright/test';
-import fs from 'fs';
+import * as fs from 'fs';
 import { createSchema } from 'genson-js';
 import Ajv from 'ajv';
 import { expect } from '@fixtures';

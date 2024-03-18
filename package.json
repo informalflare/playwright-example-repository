@@ -10,7 +10,7 @@
     "format": "npx prettier --write ."
   },
   "keywords": [],
-  "author": "",
+  "author": "@apa404",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",

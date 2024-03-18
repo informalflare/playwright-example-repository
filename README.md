@@ -33,8 +33,8 @@
 
 # Visual testing 
 - Preconditions: Docker is installed and running.
-- `npm run vvisual -- --run` to run the visual tests locally
-- `npm run vvisual -- --update` to update snapshots
+- `npm run visual -- --run` to run the visual tests locally
+- `npm run visual -- --update` to update snapshots
 
 //TODO add accessibility validator.
 
