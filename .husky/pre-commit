@@ -1,0 +1,4 @@
+green='\033[0;32m'
+
+echo "${green}Formatting the code with Husky hook"
+npm run format

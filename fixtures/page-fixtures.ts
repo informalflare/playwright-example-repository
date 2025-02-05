@@ -1,6 +1,6 @@
 import * as po from '@pages';
-import { Mocker } from '../ui/utils/mocker';
-import { CommonFixtures, UseFunction } from '@fixtures';
+import { Mocker } from '../src/ui/utils/mocker';
+import { test as base } from '@playwright/test';
 
 export interface PageFixtures {
   mocker: Mocker; //this one fakes the responses
@@ -9,16 +9,16 @@ export interface PageFixtures {
   practiceForm: po.PracticeForm;
   textBox: po.TextBoxPo;
 }
-export const pageFixtures = {
-  mocker: async ({ page }: CommonFixtures, use: UseFunction) => {
+export const pageFixtures = base.extend<PageFixtures>({
+  mocker: async ({ page }, use) => {
     await use(new Mocker(page));
   },
 
   //EXAMPLE fixtures
-  practiceForm: async ({ page }: CommonFixtures, use: UseFunction) => {
+  practiceForm: async ({ page }, use) => {
     await use(new po.PracticeForm(page));
   },
-  textBox: async ({ page }: CommonFixtures, use: UseFunction) => {
+  textBox: async ({ page }, use) => {
     await use(new po.TextBoxPo(page));
   },
-};
+});

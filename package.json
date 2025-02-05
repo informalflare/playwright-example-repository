@@ -1,24 +1,36 @@
 {
   "name": "playwright-example-repo",
-  "version": "1.0.1",
+  "type": "commonjs",
+  "version": "1.0.2",
   "description": "Base playwright framework structure",
   "main": "index.js",
   "scripts": {
-    "e2e": "npx playwright test --config ui/ui.config.ts --project=chromium",
-    "e2e-api": "npx playwright test --config api/api.config.ts --project=api",
-    "visual": "bash ui/scripts.sh",
-    "format": "npx prettier --write ."
+    "e2e": "npx playwright test --project=ui-main",
+    "api": "npx playwright test --project=api-main",
+    "e2e-ci": "npx playwright test --project=ci-cd",
+    "visual": "bash src/ui/scripts.sh --run",
+    "visual-update": "bash src/ui/scripts.sh --update",
+    "visual-ci": "npx playwright test --project=visual",
+    "visual-ci-update": "npx playwright test --project=visual --update-snapshots",
+    "format": "npx prettier --write .",
+    "postinstall": "npx playwright install",
+    "prepare": "husky"
   },
   "keywords": [],
-  "author": "@apa404",
+  "author": "TCoE",
   "license": "ISC",
   "devDependencies": {
+    "@axe-core/playwright": "^4.4.4",
     "@faker-js/faker": "^8.3.1",
-    "@playwright/test": "1.40.0",
+    "@playwright/test": "^1.49.1",
     "@types/node": "20.5.9",
-    "dotenv": "^16.3.1",
-    "prettier": "^3.1.1",
     "ajv": "^8.12.0",
-    "genson-js": "^0.0.8"
+    "allure-commandline": "^2.29.0",
+    "allure-playwright": "^2.15.1",
+    "dotenv": "^16.3.1",
+    "genson-js": "^0.0.8",
+    "husky": "^9.1.6",
+    "prettier": "^3.1.1",
+    "tsx": "^4.19.1"
   }
 }

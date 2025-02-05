@@ -11,4 +11,6 @@ node_modules/
 /.idea
 .DS_Store
 /.DS_Store
-state.json
+allure-results/
+src/ui/state.json
+/src/ui/state.json

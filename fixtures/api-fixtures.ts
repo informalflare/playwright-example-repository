@@ -1,11 +1,11 @@
-import { CommonFixtures, UseFunction } from '@fixtures';
-import { ApiClient } from '../api/api-client';
+import { test as base } from '@playwright/test';
+import { BookingController } from '../src/api/services/booking';
 
 export interface APIFixtures {
-  api: ApiClient;
+  apiBooking: BookingController;
 }
-export const apiClientFixtures = {
-  api: async ({ request }: CommonFixtures, use: UseFunction) => {
-    await use(new ApiClient(request));
+export const apiFixtures = base.extend<APIFixtures>({
+  apiBooking: async ({ request }, use) => {
+    await use(new BookingController(request));
   },
-};
+});

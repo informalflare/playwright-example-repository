@@ -1,40 +1,28 @@
 ## Installation
 
-- Preconditions: You have `node` and `npm` installed.
-- run `npm install` to download all the needed libraries
-- run `npx playwright install` this is needed to download the browser binaries.
+Preconditions: You have `node` and `npm` installed.
+run `npm install` to download all the needed libraries
 
 ## To run the tests
-- `npm run e2e` to run UI tests
-- `npm run e2e-api` to run API tests
-- `npm run format` to format the code
 
-## IMPORTANT 
-- Step-by-step tutorial for better understanding can be found `ui/specs/tutorial-example.spec.ts`
-- It contains a ton of comments/links/references
+`npm run e2e` to run UI tests
+`npm run api` to run API tests (make sure you have .env created in the root folder)
+`npm run format` to format the code
+
+## Test Cases location:
+
+`tests/ui/specs`
+`tests/api/specs`
 
 ## Project structure:
 
-- NOTE: 
-- Strongly recommended to go through `ui/specs/tutorial-example.spec.ts` to understand the structure better.
+NOTE: Strongly recommended to go through `tests/ui/examples/TUTORIAL.spec.ts` to understand the structure better.
 
-# UI 
-- `npm run e2e` to run UI tests
-- specs - test cases and suits
+# UI
 - po - Page Objects and PageElements
 - data - holds the test related data
-- snapshots - baseline screenshots for 
+- snapshots - baseline screenshots for visual tests (docs in progress)
 - utils
 
-# API 
-- `npm run e2e-api` to run API tests
-- specs - test cases and suits
-- services - your back end services on the portals ( should usually contain endpoint/controllers/helpers/schema-validators)
-
-# Visual testing 
-- Preconditions: Docker is installed and running.
-- `npm run visual -- --run` to run the visual tests locally
-- `npm run visual -- --update` to update snapshots
-
-//TODO add accessibility validator.
-
+# Fixtures
+- Contain test runners for API, UI, Settings

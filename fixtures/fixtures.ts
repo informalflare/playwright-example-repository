@@ -1,8 +1,14 @@
-import { PlaywrightTestArgs, PlaywrightTestOptions, test as baseTest } from '@playwright/test';
+import { mergeTests, PlaywrightTestArgs, PlaywrightTestOptions } from '@playwright/test';
 import { pageFixtures, PageFixtures } from './page-fixtures';
-import { apiClientFixtures, APIFixtures } from './api-fixtures';
+import { apiFixtures, APIFixtures } from './api-fixtures';
+import { settingsFixture, TestOptions } from './settings-fixture';
 
-export type CommonFixtures = PageFixtures & ConfigurationFixtures & PlaywrightTestArgs & PlaywrightTestOptions & APIFixtures;
+export type CommonFixtures = PageFixtures &
+  ConfigurationFixtures &
+  PlaywrightTestArgs &
+  PlaywrightTestOptions &
+  APIFixtures &
+  TestOptions;
 //@ts-ignpre
 export type UseFunction = (...args: any[]) => Promise<void>;
 
@@ -12,9 +18,6 @@ export interface ConfigurationFixtures {
   };
 }
 
-export const test = baseTest.extend<CommonFixtures>({
-  ...pageFixtures,
-  ...apiClientFixtures,
-});
+export const test = mergeTests(settingsFixture, pageFixtures, apiFixtures);
 
 export const expect = test.expect;
